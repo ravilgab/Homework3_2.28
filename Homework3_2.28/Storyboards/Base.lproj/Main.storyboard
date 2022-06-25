@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,23 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework3_2_28" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Homework3_2_28" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssa-qc-Jyy">
-                                <rect key="frame" x="16" y="64" width="396" height="176"/>
+                                <rect key="frame" x="16" y="64.000000000000014" width="343" height="152.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ssa-qc-Jyy" secondAttribute="height" multiplier="9:4" id="po7-Qb-ttq"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="sxt-vL-XVa">
-                                <rect key="frame" x="16" y="280" width="396" height="186"/>
+                                <rect key="frame" x="16" y="256.33333333333331" width="343" height="186"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="1nf-Q8-eoe">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="186"/>
@@ -79,18 +79,27 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="bUh-R0-a7d">
-                                        <rect key="frame" x="120" y="0.0" width="276" height="186"/>
+                                        <rect key="frame" x="120" y="0.0" width="223" height="186"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nPv-mb-ztm">
-                                                <rect key="frame" x="-2" y="0.0" width="280" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="227" height="31"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                                <connections>
+                                                    <action selector="masterSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="iEc-rv-WJ6"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n7P-nN-BoI">
-                                                <rect key="frame" x="-2" y="78" width="280" height="31"/>
+                                                <rect key="frame" x="-2" y="78" width="227" height="31"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <connections>
+                                                    <action selector="masterSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="7z8-fk-JCO"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TCW-Hb-ebU">
-                                                <rect key="frame" x="-2" y="156" width="280" height="31"/>
+                                                <rect key="frame" x="-2" y="156" width="227" height="31"/>
+                                                <connections>
+                                                    <action selector="masterSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="rqa-ix-Bea"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -100,10 +109,13 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIs-pK-S14">
-                                <rect key="frame" x="100" y="841" width="228" height="31"/>
+                                <rect key="frame" x="100" y="727" width="175" height="31"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Reset"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Iy-Sf-slE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -120,6 +132,16 @@
                             <constraint firstItem="WIs-pK-S14" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="uhi-jo-2be"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="dBC-ie-hLf" id="9Py-3O-leg"/>
+                        <outlet property="blueSlider" destination="TCW-Hb-ebU" id="Q7k-eM-rx7"/>
+                        <outlet property="colorView" destination="Ssa-qc-Jyy" id="7pV-ng-c7m"/>
+                        <outlet property="greenLabel" destination="D7u-uq-dkp" id="2A7-UP-SV6"/>
+                        <outlet property="greenSlider" destination="n7P-nN-BoI" id="grW-ON-BXz"/>
+                        <outlet property="redLabel" destination="o4t-pr-gVe" id="qfp-eT-kPt"/>
+                        <outlet property="redSlider" destination="nPv-mb-ztm" id="d7B-jd-ALS"/>
+                        <outlet property="resetButton" destination="WIs-pK-S14" id="NYG-2C-p2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
