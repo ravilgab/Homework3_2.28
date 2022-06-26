@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     }
     
     func convertToString(from slider: UISlider) -> String {
-        return String(format: "%.2f", slider.value)
+        String(format: "%.2f", slider.value)
     }
 
     func setLabelValue() {
