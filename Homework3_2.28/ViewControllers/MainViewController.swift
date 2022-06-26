@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
         greenSlider.value = 0.5
         blueSlider.value = 0.5
         
+        resetButton.configuration = setupButton(title: "Reset")
+        
         setLabelValue()
         paintView()
     }
@@ -75,5 +77,14 @@ class MainViewController: UIViewController {
         
         colorView.backgroundColor = updatedColor
     }
+    
+    private func setupButton(title: String) -> UIButton.Configuration {
+        var buttonConfiguration = UIButton.Configuration.filled()
+        
+        buttonConfiguration.baseBackgroundColor = #colorLiteral(red: 0, green: 0.3536173845, blue: 0.6560639881, alpha: 1)
+        buttonConfiguration.title = title
+        buttonConfiguration.cornerStyle = .large
 
+        return buttonConfiguration
+    }
 }
